@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuickNotes helps you create, search and organize your notes.">
+    <title>QuickNotes - Your Personal Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>QuickNotes</h1>
+        <p>Capture your thoughts. Keep them organized.</p>
+    </header>
+
+    <main class="container">
+        <section class="note-form-section">
+            <h2>Create a note</h2>
+
+            <form id="note-form">
+                <label for="note-title">Title</label>
+                <input
+                    type="text"
+                    id="note-title"
+                    maxlength="80"
+                    placeholder="Give your note a title"
+                    required
+                >
+
+                <label for="note-text">Note</label>
+                <textarea
+                    id="note-text"
+                    rows="5"
+                    maxlength="1000"
+                    placeholder="Write your note here..."
+                    required
+                ></textarea>
+
+                <label for="note-category">Category</label>
+                <select id="note-category">
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Study">Study</option>
+                    <option value="Ideas">Ideas</option>
+                </select>
+
+                <p id="form-message" role="status" aria-live="polite"></p>
+                <button type="submit">Add note</button>
+            </form>
+        </section>
+
+        <section class="notes-section">
+            <h2>Your notes <span id="note-count">(0)</span></h2>
+
+            <label for="search-input">Search notes</label>
+            <input
+                type="search"
+                id="search-input"
+                placeholder="Search titles or note contents..."
+            >
+
+            <div id="notes-list" class="notes-list"></div>
+            <p id="empty-message">No notes yet. Create your first note above.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>QuickNotes — Your notes stay in this browser.</p>
+    </footer>
+</body>
+</html>
